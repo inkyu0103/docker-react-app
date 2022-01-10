@@ -12,7 +12,6 @@ jobs:
       - name: Checkout Latest Repo
         uses: actions/checkout@master
       
-      
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       
@@ -30,7 +29,7 @@ jobs:
           context: .
           file: Dockerfile.prod
           push: true
-          tags: inkyu0103/docker-react-app:latest
+          tags: inkyu0103/docker-react-app
 
       - name: Get Timestamp
         uses: gerred/actions/current-time@master
@@ -54,7 +53,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: docker-react-app
-          environment_name: Dockerreactapp-env
+          environment_name: Dockerreactapp-env-1
           version_label: "docker-app-${{ steps.format-time.outputs.replaced }}"
           region: us-east-2
           deployment_package: deploy.zip
