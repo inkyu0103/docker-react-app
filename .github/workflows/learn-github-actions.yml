@@ -27,7 +27,7 @@ jobs:
           context: .
           file: Dockerfile.prod
           push: true
-          tags: docker-react-app/inkyu0103/docker-react-app:latest
+          tags: inkyu0103/docker-react-app
 
       - name: Get Timestamp
         uses: gerred/actions/current-time@master
